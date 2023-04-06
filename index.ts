@@ -6,7 +6,6 @@ const botaoC = document.querySelector('.botao-clean')
 const botaoEqual = document.querySelector('.botao-equal')
 let telaCalculadora = document.getElementById('tela-calculadora')
 
-// Adicionar um ouvinte de evento de clique a cada botão
 myButtons.forEach((button) => {
   button.addEventListener('click', handleClick);
 });
@@ -15,7 +14,7 @@ botaoAc.addEventListener('click', cleanAll);
 botaoC.addEventListener('click', clean);
 botaoEqual.addEventListener('click', calcular);
 
-// Definir a função de tratamento de eventos
+
 function handleClick(event) {
     const valorBotao = event.target.textContent;
     verificarTamanhoMax();
