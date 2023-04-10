@@ -1,17 +1,16 @@
-import './style.css';
-const myButtons = document.querySelectorAll('.botao');
-const botaoAc = document.querySelector('.botao-allclean');
-const botaoC = document.querySelector('.botao-clean');
-const botaoEqual = document.querySelector('.botao-equal');
-let telaCalculadora = document.getElementById('tela-calculadora');
-myButtons.forEach((button) => {
+var myButtons = document.querySelectorAll('.botao');
+var botaoAc = document.querySelector('.botao-allclean');
+var botaoC = document.querySelector('.botao-clean');
+var botaoEqual = document.querySelector('.botao-equal');
+var telaCalculadora = document.getElementById('tela-calculadora');
+myButtons.forEach(function (button) {
     button.addEventListener('click', handleClick);
 });
 botaoAc.addEventListener('click', cleanAll);
 botaoC.addEventListener('click', clean);
 botaoEqual.addEventListener('click', calcular);
 function handleClick(event) {
-    const valorBotao = event.target.textContent;
+    var valorBotao = event.target.textContent;
     verificarTamanhoMax();
     telaCalculadora.textContent += valorBotao;
 }
@@ -23,7 +22,7 @@ function clean(event) {
 }
 function calcular() {
     if (telaCalculadora.innerHTML != "") {
-        const expressao = telaCalculadora.innerHTML.replace(/X/g, "*");
+        var expressao = telaCalculadora.innerHTML.replace(/X/g, "*");
         telaCalculadora.textContent = eval(expressao);
     }
 }
